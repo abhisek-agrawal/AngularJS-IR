@@ -29,9 +29,12 @@
     <p class='no-results' ng-show='!results.length && !loading'>No Results</p>
     <article class='result' ng-repeat='result in results track by $id(result)'>
       <h2>URL : <a href="{{result._id}}" target="_blank">{{result._id}}</a></h2>
-      <!-- <p>{{result.text.substring(0,255)}} ...</p> -->
-      <!-- <p>{{result.text}}</p> -->
+      
+      <!-- Returning the hit(s) using as unsafe filter created in the controller -->
+
       <p ng-bind-html="result.text | unsafe"></p>
+
+      <!-- rankingDiv is used for ranking each url and storing it in a local database -->
 
       <div class="rankingDiv">
         <div class="halfDiv">
